@@ -39,31 +39,31 @@ $("#guessButton").click(function(){
     var input = parseInt($("#userGuess").val());
     var feedback = ["Congrats you won! Click New Game to start another game", "Please enter a number", "Pick a number btw 1-100", "Very Hot", "Hot", "Warm", "Cold", "Very Cold", "Cold as Vanilla Ice's career"]
     if (input == random) {
-      changeFeedback(feedback[0]);
+      updateFeedback(feedback[0]);
     } else if (input >= 101 || input == 0) {
       $("#userGuess").val("");
       $("#count").text(--i);
-      changeFeedback(feedback[2]);
+      updateFeedback(feedback[2]);
     } else if (random - 5 <= input && input <= random + 5) {
-      changeFeedback(feedback[3]);
+      updateFeedback(feedback[3]);
     } else if (random - 10 <= input && input <= random + 10) {
-      changeFeedback(feedback[4]);   
+      updateFeedback(feedback[4]);   
     } else if (random - 15 <= input && input <= random + 15) {
-      changeFeedback(feedback[5]);
+      updateFeedback(feedback[5]);
     } else if (random - 25 <= input && input <= random + 25) {
-      changeFeedback(feedback[6]);
+      updateFeedback(feedback[6]);
     } else if (random - 30 <= input && input <= random + 30) {
-      changeFeedback(feedback[7]);
+      updateFeedback(feedback[7]);
     } else if (isNaN(input)) {
-      changeFeedback(feedback[1]);
+      updateFeedback(feedback[1]);
       $("#userGuess").val("");
       $("#count").text(--i);
     } else {
-      changeFeedback(feedback[8]);
+      updateFeedback(feedback[8]);
     }
   }
 
-  function changeFeedback(feedback){
+  function updateFeedback(feedback){
     $("#feedback").text(feedback);
   }
 
